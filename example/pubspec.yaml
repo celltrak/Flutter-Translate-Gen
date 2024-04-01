@@ -7,7 +7,9 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  flutter_translate_annotations: ^2.1.0
+  flutter_translate_annotations:
+    git:
+      url: https://github.com/celltrak/Flutter-Translate-Annotations.git
 
 dev_dependencies:
   flutter_translate_gen:
