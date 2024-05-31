@@ -36,9 +36,9 @@ class FlutterTranslateGen extends AnnotationGenerator<TranslateKeysOptions>
         {
             translations = await getKeyMap(buildStep, options);
         }
-        on FormatException catch (_)
+        on FormatException catch (e)
         {
-            throw InvalidGenerationSourceError("Ths JSON format is invalid.");
+            throw InvalidGenerationSourceError("This JSON format is invalid. $e");
         }
 
         final file = Library((lb) => lb..body.addAll([KeysClassGenerator.generateClass(options, translations, className!)]));
